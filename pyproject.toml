@@ -1,0 +1,5 @@
+[tool.ruff.lint]
+ignore = [
+  # It can look much nicer to have short `if`s.
+  "E701",
+]
