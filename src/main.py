@@ -19,11 +19,13 @@ ip = ipaddress.ip_address(raw_ip)
 if ip.version != 4: raise ValueError(f"{ip} is not an IPv4 address")
 
 ipfile = Path(os.getenv("STATE_DIRECTORY", ".")).resolve() / "ip"
+print(f"checking {ipfile}")
 if not ipfile.exists():
     with open(ipfile, "w"): pass
 
 with open(ipfile, "r") as f:
     if raw_ip == f.read():
+        print("ip has not changed")
         exit(0)
 
 change_batch = {
@@ -50,3 +52,5 @@ c.change_resource_record_sets(
 
 with open(ipfile, "w") as f:
     f.write(raw_ip)
+
+print(f"successfully updated IP to {raw_ip}")
