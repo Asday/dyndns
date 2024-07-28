@@ -21,4 +21,22 @@ This will grab the IP you're currently on from [`ifconfig.co`](https://ifconfig.
 
 ## Installation.
 
-Use systemd to run it on a timer or something I dunno bro, whatever you want.  Set up a cron.  Set up uptimerobot and have mozilla thunderbird run a command whenever you get an email from it.  World's your oyster.
+Install `python` and `python-virtualenv`.
+
+Assuming you have systemd, run
+
+```shell
+cd /path/to/which/to/install/
+git clone git@github.com:Asday/dyndns.git
+make install
+```
+
+If you don't have systemd, run
+
+```shell
+cd /path/to/which/to/install/
+git clone git@github.com:Asday/dyndns.git
+make
+```
+
+Then figure out how to run [`src/main.py`](src/main.py) with the virtual environment on your own.

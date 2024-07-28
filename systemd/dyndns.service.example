@@ -1,0 +1,7 @@
+[Unit]
+Description=Update Route53 A records to point here.
+
+[Service]
+ExecStart=/path/to/project/root/env/bin/python /path/to/project/root/src/main.py
+StateDirectory=dyndns
+EnvironmentFile=/path/to/project/root/.env

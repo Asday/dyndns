@@ -1,3 +1,7 @@
 .envrc
+.env
 env
 ip
+systemd/dyndns.service
+.venv-created
+.requirements-installed
